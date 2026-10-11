@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clément Didier — Portfolio</title>
+  <meta name="description" content="Portfolio de Clément Didier : parcours, projets et compétences." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a href="#accueil" class="nav__logo" id="navLogo">CD</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#apropos">À propos</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Changer de thème">🌓</button>
+      <button class="icon-btn nav__burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Accueil ===== -->
+    <section class="hero" id="accueil">
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+      <div class="hero__content">
+        <div class="avatar reveal" id="avatar"></div>
+        <p class="hero__hello reveal">Bonjour, je suis</p>
+        <h1 class="hero__name reveal" id="heroName"></h1>
+        <p class="hero__typed reveal"><span id="typed"></span><span class="caret">|</span></p>
+        <p class="hero__pitch reveal" id="heroPitch"></p>
+        <div class="hero__cta reveal">
+          <a href="#projets" class="btn btn--primary">Voir mes projets</a>
+          <a href="#contact" class="btn btn--ghost">Me contacter</a>
+        </div>
+      </div>
+      <a href="#apropos" class="scroll-hint" aria-label="Défiler"><span></span></a>
+    </section>
+
+    <!-- ===== À propos ===== -->
+    <section class="section" id="apropos">
+      <h2 class="section__title reveal"><span>01.</span> À propos</h2>
+      <div class="about">
+        <div class="about__text reveal" id="aboutText"></div>
+        <div class="about__side reveal">
+          <div class="stats" id="stats"></div>
+          <div class="chips" id="qualites"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Parcours ===== -->
+    <section class="section" id="parcours">
+      <h2 class="section__title reveal"><span>02.</span> Parcours</h2>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- ===== Projets ===== -->
+    <section class="section" id="projets">
+      <h2 class="section__title reveal"><span>03.</span> Projets</h2>
+      <div class="filters reveal">
+        <div class="filter-bar" id="filterBar" role="tablist">
+          <span class="filter-bar__pill" id="filterPill"></span>
+        </div>
+        <input type="search" class="search" id="search" placeholder="🔎 Rechercher un projet…" />
+      </div>
+      <p class="projects__count" id="projectsCount"></p>
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <!-- ===== Compétences ===== -->
+    <section class="section" id="competences">
+      <h2 class="section__title reveal"><span>04.</span> Compétences</h2>
+      <div class="skills" id="skills"></div>
+      <div class="interests reveal">
+        <h3>Centres d'intérêt</h3>
+        <div class="chips" id="interets"></div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section contact" id="contact">
+      <h2 class="section__title reveal"><span>05.</span> Contact</h2>
+      <div class="contact__card reveal">
+        <h3>Travaillons ensemble ✨</h3>
+        <p>Mon profil vous intéresse ? N'hésitez pas à me contacter, je vous répondrai rapidement.</p>
+        <div class="contact__links" id="contactLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="footerName"></span> — Fait avec passion ✦</p>
+  </footer>
+
+  <!-- Fenêtre de détail d'un projet -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close aria-label="Fermer">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
